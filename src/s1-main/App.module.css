@@ -9,6 +9,7 @@
 }
 
 .hw > div {
+    margin-top: 20px;
     margin-left: 70px;
     margin-right: 70px;
 }
@@ -16,7 +17,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 22px;
     font-weight: 600;
-    margin-top: 130px;
+    margin-top: 10px;
     margin-left: 70px;
     margin-bottom: 10px;
 }

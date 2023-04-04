@@ -1,27 +1,40 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Affair from './affair/Affair'
 import {AffairType, FilterType} from '../HW2'
 import s from './Affairs.module.css'
 
+
 type AffairsPropsType = {
-    data: any // need to fix any
-    setFilter: any
-    deleteAffairCallback: any
+    data: AffairType[] // need to fix any //
+    setFilter: (filter: FilterType) => void
+    deleteAffairCallback: (id: number) => void
     filter: FilterType
 }
 
 function Affairs(props: AffairsPropsType) {
+    const [filteredAffairs, setFilteredAffairs] = useState(props.data)
     const setAll = () => {
-        // need to fix
+        setFilteredAffairs(props.data);
+        props.setFilter('all');
+        // need to fix //
     }
     const setHigh = () => {
-        // need to fix
+        const highAffairs = props.data.filter((a) => a.priority === 'high');
+        setFilteredAffairs(highAffairs);
+        props.setFilter('high');
+        // need to fix //
     }
     const setMiddle = () => {
-        // need to fix
+        const middleAffairs = props.data.filter((a) => a.priority === 'middle');
+        setFilteredAffairs(middleAffairs);
+        props.setFilter('middle');
+        // need to fix //
     }
     const setLow = () => {
-        // need to fix
+        const lowAffairs = props.data.filter((a) => a.priority === 'low');
+        setFilteredAffairs(lowAffairs);
+        props.setFilter('low');
+        // need to fix //
     }
 
     const cnAll = s.button + ' ' + s.all + (props.filter === 'all' ? ' ' + s.active : '')
