@@ -56,6 +56,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
 
     return (
         <div className={s.inputWrapper}>
+
             <input
                 id={id}
                 type={'text'}
